@@ -6,8 +6,6 @@
 ?>
 <?if (!empty($arResult)):?>
 <div class="submenu2">
-<a href="<?=SITE_DIR?>wheels/podbor-diskov.php"><h4>Подбор дисков</h4></a>
-<hr>
 
 <a href="<?=SITE_DIR?>wheels"><h4>Каталог дисков</h4></a>
     <div class="table">

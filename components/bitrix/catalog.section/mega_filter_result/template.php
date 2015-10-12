@@ -130,7 +130,7 @@
                     $class = "outofstock";
                 }
                 
-                $arImgs[] = '<td class="mega_result_image"><div><a href="'.$arElement['DETAIL_PAGE_URL'].'"><img src="'.$picture.'" width="'.$width.'" height="'.$height.'" alt="'.$arElement['NAME'].'" id="i'.$arElement['ID'].'" /></a>'.$icons.'</div></td>';
+                $arImgs[] = '<td class="mega_result_image"><div><a href="'.$arElement['DETAIL_PAGE_URL'].'"><img style="float:right; padding-right:10px; padding-top:20px;" src="'.$picture.'" width="'.$width.'" height="'.$height.'" alt="'.$arElement['NAME'].'" id="i'.$arElement['ID'].'" /></a>'.$icons.'</div></td>';
 
                 $arData[] = '<td class="txt" id="'.$this->GetEditAreaId($arElement['ID']).'">
                 <h4 id="name'.$arElement['ID'].'"><a href="'.$arElement['DETAIL_PAGE_URL'].'">
@@ -139,24 +139,24 @@
                 '.(($arElement['IBLOCK_ID']=='5')?
                     ('
                         <table class="param_table">
-                <tr><td> Бренд</td><td> '.$arElement['PROPERTIES']['CML2_MANUFACTURER']['VALUE'].'</td></tr>
-                <tr><td> Ширина</td><td> '.$arElement['PROPERTIES']['tyre_width']['VALUE'].'</td></tr>
-                <tr><td> Высота</td><td> '.$arElement['PROPERTIES']['tyre_height']['VALUE'].'</td></tr>
-                <tr><td> Радиус</td><td> '.$arElement['PROPERTIES']['tyre_diameter']['VALUE'].'</td></tr>
-                <tr><td> Сезон</td><td> '.$arElement['PROPERTIES']['model_season']['VALUE'].'</td></tr>
-                <tr><td> Шипование</td><td> '.$arElement['PROPERTIES']['model_pin']['VALUE'].'</td></tr>
+                <tr><td class="key"> Бренд</td><td class="val"> '.$arElement['PROPERTIES']['CML2_MANUFACTURER']['VALUE'].'</td></tr>
+                <tr><td class="key"> Ширина</td><td class="val"> '.$arElement['PROPERTIES']['tyre_width']['VALUE'].'</td></tr>
+                <tr><td class="key"> Высота</td><td class="val"> '.$arElement['PROPERTIES']['tyre_height']['VALUE'].'</td></tr>
+                <tr><td class="key"> Радиус</td><td class="val"> '.$arElement['PROPERTIES']['tyre_diameter']['VALUE'].'</td></tr>
+                <tr><td class="key"> Сезон</td><td class="val"> '.$arElement['PROPERTIES']['model_season']['VALUE'].'</td></tr>
+                <tr><td class="key"> Шипованный</td><td class="val"> '.$arElement['PROPERTIES']['model_pin']['VALUE'].'</td></tr>
                 </table> 
                    '):'').'
 
                 '.(($arElement['IBLOCK_ID']=='7')?
                     ('
                        <table class="param_table">
-				<tr><td> Бренд</td><td> '.$arElement['PROPERTIES']['CML2_MANUFACTURER']['VALUE'].'</td></tr>
-               <tr><td> <li> Ширина </td><td>'.$arElement['PROPERTIES']['wheels_width']['VALUE'].'</td></tr>
-                <tr><td><li> Радиус </td><td>'.$arElement['PROPERTIES']['wheels_diameter']['VALUE'].'</td></tr>
-                <tr><td><li> PCD</td><td>'.$arElement['PROPERTIES']['wheels_aperture']['VALUE'].'</td></tr>
-                <tr><td><li> Вылет (ET)</td><td>'.$arElement['PROPERTIES']['wheels_gab']['VALUE'].'</td></tr>
-                <tr><td><li> Диаметр ступицы (DIA)</td><td>'.$arElement['PROPERTIES']['wheels_center']['VALUE'].'</td></tr>
+				<tr><td class="key"> Бренд</td><td class="val"> '.$arElement['PROPERTIES']['CML2_MANUFACTURER']['VALUE'].'</td></tr>
+               <tr><td class="key"> <li> Ширина </td><td class="val">'.$arElement['PROPERTIES']['wheels_width']['VALUE'].'</td></tr>
+                <tr><td class="key"><li> Радиус </td><td class="val">'.$arElement['PROPERTIES']['wheels_diameter']['VALUE'].'</td></tr>
+                <tr><td class="key"><li> PCD</td><td class="val">'.$arElement['PROPERTIES']['wheels_aperture']['VALUE'].'</td></tr>
+                <tr><td class="key"><li> Вылет (ET)</td><td class="val">'.$arElement['PROPERTIES']['wheels_gab']['VALUE'].'</td></tr>
+                <tr><td class="key"><li> Диаметр ступицы (DIA)</td><td class="val">'.$arElement['PROPERTIES']['wheels_center']['VALUE'].'</td></tr>
                 </table> 
                    '):'').'
                 <p class="'.$class.'"></p>'

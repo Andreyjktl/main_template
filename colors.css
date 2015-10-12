@@ -90,9 +90,9 @@ footer div.addr {
 
 /* Filter Tabs */
 div.filter div.top ul li.selected {
-	background: #0075b0 url(./images/filter-tab.gif) repeat-x 0 -30px;
-	border-color: #00689c;
-	border-bottom-color: #0075b0;
+	background: #EDF6FC;
+    border-color: #EDF6FC;
+    border-bottom-color: #EDF6FC;
 }
 
 
@@ -106,8 +106,9 @@ div.filter div.bottom div.brd {
 	background: #0075b0;
 }
 div.filter div.params {
-	border-right-color: #0070a9;
-	background: #0075b0 url(./images/filter-params.gif) repeat-y 100% 0;
+border-right-color: #0070a9; */
+    border: 0px solid #0F85C1;
+    background: #edf6fc;
 }
 
 

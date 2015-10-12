@@ -9,9 +9,6 @@
 <?if (!empty($arResult)):?>
 <div class="submenu2">
 
-	<a href="<?=SITE_DIR?>tyres/podbor-shin.php"><h4>Подбор шин</h4></a>
-
-<hr>
 		<a href="<?=SITE_DIR?>tyres"><h4>Каталог шин</h4></a>
     	<div class="table">
 		<?
