@@ -62,8 +62,8 @@
                  foreach($arElement["PRICES"] as $code=>$arPrice){
                      if($arPrice["CAN_ACCESS"]){
                          if($arPrice["DISCOUNT_VALUE"] < $arPrice["VALUE"]){
-                             $price = '<p><span class="strike">'.$arPrice["VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></span> ('.($arPrice["DISCOUNT_VALUE"] - $arPrice["VALUE"]).' <span class="rubl">'.GetMessage("DVS_RUB").'</span>)</p>
-                                      <p class="price">'.$arPrice["DISCOUNT_VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></p>';
+                             $price = '<p>Без скидки  <span class="strike">'.$arPrice["VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></span></p>
+                                      <p class="price">'.round($arPrice["DISCOUNT_VALUE"]).' <span class="rubl">'.GetMessage("DVS_RUB").'</span></p>';
                              $sale = true;
                          } else {
                              $price = '<p class="price">'.$arPrice["VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></p>';
@@ -98,14 +98,15 @@
                 }
 
                 //ГёГЁГ«ГјГ¤Г»
-                $icons = '';
+               /* $icons = '';
                 if ($sale || $hit) {
                     $icons = '<ul class="icons">'.
-                        ($sale ? '<li><span class="red">'.dvsSALE.'</span></li>' : '')//***
+                        ($sale ? '<li><span class="red">Скидка</span></li>' : '')//***
                         .
-                        ($hit ? '<li><span class="green">'.dvsHIT.'</span></li>' : '')//***
+                        ($hit ? '<li><span class="green">Хит</span></li>' : '')//***
                     .'</ul>';
                 }
+                */
 
                 if (is_array($arElement['PREVIEW_PICTURE'])) {
                     $picture = $arElement['PREVIEW_PICTURE']['SRC'];
@@ -139,8 +140,7 @@
                 '.(($arElement['IBLOCK_ID']=='5')?
                     ('
                         <table class="param_table">
-                <tr><td class="key"> Бренд</td><td class="val"> '.$arElement['PROPERTIES']['CML2_MANUFACTURER']['VALUE'].'</td></tr>
-                <tr><td class="key"> Ширина</td><td class="val"> '.$arElement['PROPERTIES']['tyre_width']['VALUE'].'</td></tr>
+               <tr><td class="key"> Ширина</td><td class="val"> '.$arElement['PROPERTIES']['tyre_width']['VALUE'].'</td></tr>
                 <tr><td class="key"> Высота</td><td class="val"> '.$arElement['PROPERTIES']['tyre_height']['VALUE'].'</td></tr>
                 <tr><td class="key"> Радиус</td><td class="val"> '.$arElement['PROPERTIES']['tyre_diameter']['VALUE'].'</td></tr>
                 <tr><td class="key"> Сезон</td><td class="val"> '.$arElement['PROPERTIES']['model_season']['VALUE'].'</td></tr>
@@ -151,8 +151,7 @@
                 '.(($arElement['IBLOCK_ID']=='7')?
                     ('
                        <table class="param_table">
-				<tr><td class="key"> Бренд</td><td class="val"> '.$arElement['PROPERTIES']['CML2_MANUFACTURER']['VALUE'].'</td></tr>
-               <tr><td class="key"> <li> Ширина </td><td class="val">'.$arElement['PROPERTIES']['wheels_width']['VALUE'].'</td></tr>
+				 <tr><td class="key"> <li> Ширина </td><td class="val">'.$arElement['PROPERTIES']['wheels_width']['VALUE'].'</td></tr>
                 <tr><td class="key"><li> Радиус </td><td class="val">'.$arElement['PROPERTIES']['wheels_diameter']['VALUE'].'</td></tr>
                 <tr><td class="key"><li> PCD</td><td class="val">'.$arElement['PROPERTIES']['wheels_aperture']['VALUE'].'</td></tr>
                 <tr><td class="key"><li> Вылет (ET)</td><td class="val">'.$arElement['PROPERTIES']['wheels_gab']['VALUE'].'</td></tr>

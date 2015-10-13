@@ -422,8 +422,9 @@ button.button1:disabled span, button.button2:disabled span, button.button3:disab
 }
 button.disabled span {
 	cursor: default;
-	background: #dcdcdc url(./images/button-disabled.gif) repeat-x 0 0 !important;
-	border-color: #fff !important;
+    background: #dcdcdc url(/bitrix/templates/main_template/./images/button-disabled.gif) repeat-x 0 0 !important;
+    border-color: #fff !important;
+    color: #0083BD !important;
 }
 button.disabled:active {
 	position: relative;
@@ -1926,8 +1927,9 @@ table.catalog h4 {
 }
 table.catalog p.price {
 	font-size: 1.166em;
+	color: #FF0000;
 	font-weight: bold;
-	color: #333;
+	
 	padding: 0;
 }
 div.tocart {
@@ -1952,7 +1954,9 @@ div.tocart button span {
 	min-width: 58px;
 }
 span.strike {
-	text-decoration: line-through;
+	    text-decoration: line-through;
+    color: #7B7B7B;
+    font-size: 1.2em;
 }
 span.summer {
 	color: #ff9900;
@@ -2033,19 +2037,19 @@ span.green {
 	background-color: rgba(0, 128, 0, 0.56);
 }
 span.red {
-	display: block;
-	width: 40px;
-	height: 20px;
-	padding-top: 4px;
-	overflow: hidden;
-	background: url(./images/icons/red.png) no-repeat 0 0;
-	line-height: 1.45em;
-	font-weight: bold;
-	color: #fff;
-	text-align: center;
-	text-shadow: 1px 1px 0px #993300;
-	-moz-text-shadow: 1px 1px 0px #993300;
-	-webkit-text-shadow: 1px 1px 0px #993300;
+    display: block;
+    width: 50px;
+    height: 20px;
+    padding-top: 4px;
+    overflow: hidden;
+    background: url(/bitrix/templates/main_template/./images/icons/red.png) no-repeat 0 0;
+    line-height: 1.45em;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    /* text-shadow: 1px 1px 0px #993300; */
+    -moz-text-shadow: 1px 1px 0px #993300;
+    -webkit-text-shadow: 1px 1px 0px #993300;
 }
 div.mode {
 	position: relative;
@@ -3005,7 +3009,7 @@ div.title-search-fader {
 	border-bottom: 1px dotted !important;
 }
 .instock {
-	color: #339900 !important;
+	color: #5A5A5A !important;
 }
 .order {
 	color: #666 !important;
