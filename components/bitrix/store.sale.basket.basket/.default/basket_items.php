@@ -12,7 +12,7 @@
 
     <table class="cart">
         <tr>
-            <th>&nbsp;</th>
+            <th> </th>
         <?if (in_array("NAME", $arParams["COLUMNS_LIST"])):?>
             <th colspan="2"><?= GetMessage("SALE_NAME")?></th>
         <?endif;?>
@@ -20,11 +20,11 @@
             <th><?= GetMessage("SALE_DISCOUNT")?></th>
         <?endif;?>
             <th><?= GetMessage("SALE_PRICE_QUANTITY")?></th>
-            <th>&nbsp;</th>
+            <th> </th>
         <?if (in_array("QUANTITY", $arParams["COLUMNS_LIST"])):?>
             <th><?= GetMessage("SALE_QUANTITY")?></th>
         <?endif;?>
-            <th>&nbsp;</th>
+            <th> </th>
         <?if (in_array("PRICE", $arParams["COLUMNS_LIST"])):?>
             <th><?= GetMessage("SALE_PRICE")?></th>
         <?endif;?>
@@ -83,7 +83,7 @@
             <?if (in_array("DISCOUNT", $arParams["COLUMNS_LIST"])):?>
                 <td class="old-price">
                 <?if($arBasketItems["PRICE"]<$arBasketItems["BASE_PRICE"]['PRICE']){
-                    echo '<span class="strike">'.($arBasketItems["BASE_PRICE"]['PRICE']).'<span class="rubl">'.GetMessage("DVS_RUB").'</span></span>&nbsp; (-'.($arBasketItems["BASE_PRICE"]['PRICE']-$arBasketItems["PRICE"]).' <span class="rubl">'.GetMessage("DVS_RUB").'</span>)';
+                    echo '<span class="strike">'.($arBasketItems["BASE_PRICE"]['PRICE']).'<span class="rubl">'.GetMessage("DVS_RUB").'</span></span>  (-'.($arBasketItems["BASE_PRICE"]['PRICE']-$arBasketItems["PRICE"]).' <span class="rubl">'.GetMessage("DVS_RUB").'</span>)';
                 }
                 ?>
                 </td>
@@ -101,7 +101,7 @@
 
             <td class="fn">=</td>
 
-            <td class="total-price"><?=$arBasketItems["TOTAL"]?> <span class="rubl"><?=GetMessage("DVS_RUB")?></span></td>
+            <td class="total-price"><?=round($arBasketItems["TOTAL"])?> <span class="rubl"><?=GetMessage("DVS_RUB")?></span></td>
         </tr>
         <?$i++;
         }

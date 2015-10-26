@@ -81,9 +81,9 @@ $_SESSION["TYRES"]["TEXT"][$_SESSION["SALE_USER_ID"]]["DVS_IN_BASKET"] = GetMess
         $icons = '';
         if ($sale || $hit) {
             $icons = '<ul class="icons">'.
-                ($sale ? '<li><span class="red">'.dvsSALE.'</span></li>' : '')//***
+                ($sale ? '<li><span class="red">Скидка</span></li>' : '')//***
                 .
-                ($hit ? '<li><span class="green">'.dvsHIT.'</span></li>' : '')//***
+                ($hit ? '<li><span class="green">Хит</span></li>' : '')//***
             .'</ul>';
         }
 
@@ -116,14 +116,15 @@ $_SESSION["TYRES"]["TEXT"][$_SESSION["SALE_USER_ID"]]["DVS_IN_BASKET"] = GetMess
             <p><span class="'.$season_class.'">'.$season_name.($pin?', ':'').'</span>'.($pin?'<span class="spike">'.GetMessage("DVS_PIN").'</span>':'').'</p>
             <p>'.$arElement['PROPERTIES']['model_type']['VALUE'].'</p>'
             .'<p class="'.$class.'">'.$quantity.'</p>'.
-            (($iDiscount < $iPrice)?('<p><span class="strike">'.$iPrice.' <span class="rubl">'.GetMessage("DVS_RUB").'</span></span> ('.($iDiscountDiff).' <span class="rubl">'.GetMessage("DVS_RUB").'</span>)</p>'):'').
-            '<p class="price">'.$iDiscount.' <span class="rubl">'.GetMessage("DVS_RUB").'</span></p>
+            (($iDiscount < $iPrice)?('<p><span class="strike">'.$iPrice.' <span class="rubl">'.GetMessage("DVS_RUB").'</span></span> </p>'):'').
+            '<p>Со скидкой</p><p class="price">'.round($iDiscount).' <span class="rubl">'.GetMessage("DVS_RUB").'</span></p>
             <form action="'.POST_FORM_ACTION_URI.'" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="'.$arParams["ACTION_VARIABLE"].'" value="BUY">
                 <input type="hidden" name="'.$arParams["PRODUCT_ID_VARIABLE"].'" value="'.$arElement["ID"].'">
                 <input type="hidden" name="'.$arParams["ACTION_VARIABLE"].'BUY" value="Y">
                 <div class="tocart buy-i" itemID="'.$arElement['ID'].'" offerStatus="'.($arElement['CATALOG_QUANTITY']==0?'not-available':'available').'">
                         <input type="hidden" id="price'.$arElement['ID'].'" value="'.$iDiscount.'" />
+                        <span class="zakaz">Заказать </span>
                         <input type="text" onkeyup="validateRange(this,1);" id="count'.$arElement['ID'].'" name="'.$arParams["PRODUCT_QUANTITY_VARIABLE"].'" value="'.($arElement['CATALOG_QUANTITY']<4?$arElement['CATALOG_QUANTITY']:4).'" size="5" class="text2">
                         <span class="pcs">'.dvsUNIT.'</span>
                         <button id="buybutton'.$arElement['ID'].'" data-in-basket="'.GetMessage("DVS_IN_BASKET").'" type="submit" class="button2 buy"><span>'.$buttonText.'</span></button>

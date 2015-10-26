@@ -63,7 +63,7 @@
                      if($arPrice["CAN_ACCESS"]){
                          if($arPrice["DISCOUNT_VALUE"] < $arPrice["VALUE"]){
                              $price = '<p>Без скидки  <span class="strike">'.$arPrice["VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></span></p>
-                                      <p class="price">'.round($arPrice["DISCOUNT_VALUE"]).' <span class="rubl">'.GetMessage("DVS_RUB").'</span></p>';
+                                      <p>Со скидкой</p><p class="price">'.round($arPrice["DISCOUNT_VALUE"]).' <span class="rubl">'.GetMessage("DVS_RUB").'</span></p>';
                              $sale = true;
                          } else {
                              $price = '<p class="price">'.$arPrice["VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></p>';
@@ -107,8 +107,7 @@
                     .'</ul>';
                 }
                 */
-
-                if (is_array($arElement['PREVIEW_PICTURE'])) {
+               if (is_array($arElement['PREVIEW_PICTURE'])) {
                     $picture = $arElement['PREVIEW_PICTURE']['SRC'];
                     $width = $arElement['PREVIEW_PICTURE']['WIDTH'];
                     $height = $arElement['PREVIEW_PICTURE']['HEIGHT'];
@@ -131,31 +130,46 @@
                     $class = "outofstock";
                 }
                 
-                $arImgs[] = '<td class="mega_result_image"><div><a href="'.$arElement['DETAIL_PAGE_URL'].'"><img style="float:right; padding-right:10px; padding-top:20px;" src="'.$picture.'" width="'.$width.'" height="'.$height.'" alt="'.$arElement['NAME'].'" id="i'.$arElement['ID'].'" /></a>'.$icons.'</div></td>';
+                $arImgs[] = '<td class="mega_result_image">
+                    <div><a href="'.$arElement['DETAIL_PAGE_URL'].'">
+                        <img style="float:right; padding-top:20px;" src="'.$picture.'" max-width="150px;" max-width="150px;" "width="'.$width.'" height="'.$height.'" alt="'.$arElement['NAME'].'" id="i'.$arElement['ID'].'" /></a>'.$icons.'
+                        
+                        </div>
+                        <div style="clear:both">
+                        '.(($arElement['IBLOCK_ID']=='7')?
+                    ('
+                        <p style="font-size: 11px; color:grey;">
+                        Цвет может отличаться
+                        <img width="12px;" height="12px;" src="images/vopros_32.png" title="Цвет диска на картинке может отличаться от оригинала, смотрите описание в характеристиках или спрашивайте у менеджера."></img>
+                        </p>
+                         '):'').'
+                        </div>
+                        
+                        </td>';
 
-                $arData[] = '<td class="txt" id="'.$this->GetEditAreaId($arElement['ID']).'">
+                $arData[] = '<td style="padding-left:7px;" class="txt" id="'.$this->GetEditAreaId($arElement['ID']).'">
                 <h4 id="name'.$arElement['ID'].'"><a href="'.$arElement['DETAIL_PAGE_URL'].'">
                 '.trim($arElement['NAME'], "(" ) .'</a></h4>
                
                 '.(($arElement['IBLOCK_ID']=='5')?
                     ('
                         <table class="param_table">
-               <tr><td class="key"> Ширина</td><td class="val"> '.$arElement['PROPERTIES']['tyre_width']['VALUE'].'</td></tr>
-                <tr><td class="key"> Высота</td><td class="val"> '.$arElement['PROPERTIES']['tyre_height']['VALUE'].'</td></tr>
-                <tr><td class="key"> Радиус</td><td class="val"> '.$arElement['PROPERTIES']['tyre_diameter']['VALUE'].'</td></tr>
-                <tr><td class="key"> Сезон</td><td class="val"> '.$arElement['PROPERTIES']['model_season']['VALUE'].'</td></tr>
-                <tr><td class="key"> Шипованный</td><td class="val"> '.$arElement['PROPERTIES']['model_pin']['VALUE'].'</td></tr>
+                <tr><td class="key"> Ширина............ '.$arElement['PROPERTIES']['tyre_width']['VALUE'].' мм</td></tr>
+                <tr><td class="key"> Высота............. '.$arElement['PROPERTIES']['tyre_height']['VALUE'].' %</td></tr>
+                <tr><td class="key"> Диаметр............ '.$arElement['PROPERTIES']['tyre_diameter']['VALUE'].'</td></tr>
+                <tr><td class="key"> Сезон............... '.$arElement['PROPERTIES']['model_season']['VALUE'].'</td></tr>
+                <tr><td class="key"> Шипованный... '.$arElement['PROPERTIES']['model_pin']['VALUE'].'</td></tr>
                 </table> 
                    '):'').'
 
                 '.(($arElement['IBLOCK_ID']=='7')?
                     ('
                        <table class="param_table">
-				 <tr><td class="key"> <li> Ширина </td><td class="val">'.$arElement['PROPERTIES']['wheels_width']['VALUE'].'</td></tr>
-                <tr><td class="key"><li> Радиус </td><td class="val">'.$arElement['PROPERTIES']['wheels_diameter']['VALUE'].'</td></tr>
-                <tr><td class="key"><li> PCD</td><td class="val">'.$arElement['PROPERTIES']['wheels_aperture']['VALUE'].'</td></tr>
-                <tr><td class="key"><li> Вылет (ET)</td><td class="val">'.$arElement['PROPERTIES']['wheels_gab']['VALUE'].'</td></tr>
-                <tr><td class="key"><li> Диаметр ступицы (DIA)</td><td class="val">'.$arElement['PROPERTIES']['wheels_center']['VALUE'].'</td></tr>
+			    <tr><td class="key"><li> Ширина........ '.$arElement['PROPERTIES']['wheels_width']['VALUE'].'</td></tr>
+                <tr><td class="key"><li> Диаметр....... '.$arElement['PROPERTIES']['wheels_diameter']['VALUE'].'</td></tr>
+                <tr><td class="key"><li> PCD..............'.$arElement['PROPERTIES']['wheels_aperture']['VALUE'].' мм</td></tr>
+                <tr><td class="key"><li> Вылет (ET)...'.$arElement['PROPERTIES']['wheels_gab']['VALUE'].' мм</td></tr>
+                <tr><td class="key"><li> (DIA)..............'.$arElement['PROPERTIES']['wheels_center']['VALUE'].' мм</td></tr>
                 </table> 
                    '):'').'
                 <p class="'.$class.'"></p>'
@@ -174,9 +188,11 @@
                     <input type="hidden" name="'.$arParams["ACTION_VARIABLE"].'BUY" value="Y">
                     <div class="tocart buy-i" itemID="'.$arElement['ID'].'" offerStatus="'.($arElement['CATALOG_QUANTITY']==0?'not-available':'available').'">
                             <input type="hidden" id="price'.$arElement['ID'].'" value="'.$iDiscount.'" />
+                            <span class="zakaz">Заказать </span>
                             <input type="text" onkeyup="validateRange(this,1,'.$arElement['CATALOG_QUANTITY'].');" id="count'.$arElement['ID'].'" name="'.$arParams["PRODUCT_QUANTITY_VARIABLE"].'" value="'.($arElement['CATALOG_QUANTITY']<4?$arElement['CATALOG_QUANTITY']:4).'" size="5" class="text2">
                             <span class="pcs">'.dvsUNIT.'</span>
-                            <button style="width:100px;" id="buybutton'.$arElement['ID'].'" data-in-basket="'.GetMessage("DVS_IN_BASKET").'" type="submit" class="button2 buy"><span>'.$buttonText.'</span></button>
+                            
+                            <button style=" width:100px;" id="buybutton'.$arElement['ID'].'" data-in-basket="'.GetMessage("DVS_IN_BASKET").'" type="submit" class="button2 buy"><span>'.$buttonText.'</span></button>
                             <div class="clear"></div>
                     </div>
 

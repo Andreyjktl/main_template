@@ -17,7 +17,7 @@
 </tr>
 
             <tr>
-                <td><select class="size0" id="tp_width" name="width"><option value="0"><?=GetMessage("DVS_WIDTH");?></option>
+                <td><select class="size0" id="tp_width" name="width"><option value="0">-</option>
                             <?foreach($arResult['TYRES']['WIDTH'] as $key => $value){
                                 if(isset($_REQUEST['width'])&&$_REQUEST['width']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';
@@ -26,7 +26,7 @@
                             }?>
                         </select></td>
                 <td><span>/</span></td>
-                <td><select class="size0" id="tp_height" name="height"><option value="0"><?=GetMessage("DVS_HEIGHT");?></option>
+                <td><select class="size0" id="tp_height" name="height"><option value="0">-</option>
                             <?foreach($arResult['TYRES']['HEIGHT'] as $key => $value){
                                 if(isset($_REQUEST['height'])&&$_REQUEST['height']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';
@@ -35,7 +35,7 @@
                             }?>
                         </select></td>
                 <td><span>R</span></td>
-                <td><select class="size0" id="tp_diameter" name="diameter"><option value="0"><?=GetMessage("DVS_DIAM");?></option>
+                <td><select class="size0" id="tp_diameter" name="diameter"><option value="0">-</option>
                             <?foreach($arResult['TYRES']['DIAM'] as $key => $value){
                                 if(isset($_REQUEST['diameter'])&&$_REQUEST['diameter']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';
@@ -46,9 +46,9 @@
  </tr>
 
 <tr>
-                <td>Сезон</td>
+                <td>Сезон</td><td></td><td>Шип.</td>
 	</tr><tr>
-                        <td><select class="size2" id="tp_season" name="season" id="season"><option value="0"><?=GetMessage("DVS_SEASON");?></option>
+                        <td><select class="size2" id="tp_season" name="season" id="season"><option value="0">-</option>
                             <?foreach($arResult['TYRES']['SEASON'] as $key => $value){
                                 if(isset($_REQUEST['season'])&&$_REQUEST['season']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';
@@ -57,8 +57,10 @@
                             }?>
                         </select></td>
 
-            </tr>
-					<tr> <td><select class="size2" id="tp_pin" name="pin" id="pin" <?if(!isset($_REQUEST['season'])||isset($_REQUEST['season'])&&$_REQUEST['season']!='zima') echo 'style="display:none;" disabled';?>><option value="0"><?=GetMessage("DVS_PIN");?></option>
+                          <td></td>
+
+                          <td>
+                            <select class="size2" id="tp_pin" name="pin" id="pin" ><option value="0"></option>
                             <?foreach($arResult['TYRES']['PIN'] as $key => $value){
                                 if(isset($_REQUEST['pin'])&&$_REQUEST['pin']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';

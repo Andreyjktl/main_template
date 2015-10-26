@@ -17,7 +17,7 @@
             } ?>
             <img border="0" src="<?=$picture?>" width="<?=$width?>" height="<?=$height?>" alt="<?=$arResult["NAME"]?>" title="<?=$arResult["NAME"]?>" />
 <br><br><br><script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script><div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="link" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
-       
+
         </div>
 
         <!-- List Table -->
@@ -38,7 +38,7 @@
                 <?if(is_array($arResult["OFFERS"]) && !empty($arResult["OFFERS"])):?>
                 <table class="list">
                         <tr>
-                            <th><?=GetMessage("DVS_SIZE");?></th><th><?=GetMessage("DVS_AVAILABLE");?></th><th><?=GetMessage("DVS_PRICE");?></th><th>&nbsp;</th><th><?=GetMessage("DVS_QUANTITY");?></th>
+                            <th><?=GetMessage("DVS_SIZE");?></th><th><?=GetMessage("DVS_AVAILABLE");?></th><th><?=GetMessage("DVS_PRICE");?></th><th> </th><th><?=GetMessage("DVS_QUANTITY");?></th>
                         </tr>
 
                         <?foreach($arResult["OFFERS"] as $arOffer):
@@ -135,12 +135,15 @@
         <div class="tabs full crop-top">
                 <ul class="tabs size1">
                     <li class="selected"><span><?=GetMessage("DVS_DET");?></span></li>
+
                 </ul>
                 <div class="clear"></div>
         </div>
         <br/>
         <div class="tabs-content">
             <div class="tab-overview"><?echo $arResult['DETAIL_TEXT'];?></div>
+
+
         </div>
 </div>
 <!-- // Gray Block -->

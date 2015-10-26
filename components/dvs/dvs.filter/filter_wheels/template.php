@@ -1,5 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
-<div class="filter" style="width:300px;">
+<div class="filter" style="width:250px;">
    
                 <!-- WHEEL.PARAMS -->
                 <form id="wp_form" action="<?=SITE_DIR?>search.php" method="get" class="f3">
@@ -8,8 +8,8 @@
 "><table>
 <tr>
 	<td>Диаметр диска</td><td style="width:10px;"></td><td>Ширина диска</td></tr><tr>
-	<td>      <select id="wp_diameter" style="width:120px;" name="diameter">
-                            <option value="0"><?echo GetMessage("DVS_POS_DIAM");?></option>
+	<td>      <select id="wp_diameter" style="width:100px;" name="diameter">
+                            <option value="0">-</option>
                             <?foreach($arResult['WHEELS']['DIAM'] as $key => $value){
                                 if(isset($_REQUEST['diameter'])&&$_REQUEST['diameter']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';
@@ -18,8 +18,8 @@
                             }?>
                              </select>
 </td><td></td><td>
-                               <select id="wp_width" style="width:120px;" name="width">
-                            <option value="0"><?echo GetMessage("DVS_WIDTH_T");?></option>
+                               <select id="wp_width" style="width:100px;" name="width">
+                            <option value="0">-</option>
                             <?foreach($arResult['WHEELS']['WIDTH'] as $key => $value){
                                 if(isset($_REQUEST['width'])&&$_REQUEST['width']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';
@@ -31,8 +31,8 @@
 <tr><td>Крепление</td>
 	<td></td><td>Производитель</td></tr>
               <tr> <td>      
-                      <select id="wp_apperture"  style="width:120px;" name="aperture">
-                            <option value="0"><?echo GetMessage("DVS_PCD");?></option>
+                      <select id="wp_apperture"  style="width:100px;" name="aperture">
+                            <option value="0">-</option>
                             <?foreach($arResult['WHEELS']['APERTURE'] as $key => $value){
                                 if(isset($_REQUEST['aperture'])&&$_REQUEST['aperture']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';
@@ -41,8 +41,8 @@
                             }?>
                         </select>
 	</td><td></td><td>
-                     <select id="wp_brand"  style="width:120px;" name="brand">
-                            <option value="0"><?echo GetMessage("DVS_PROPD");?></option>
+                     <select id="wp_brand"  style="width:100px;" name="brand">
+                            <option value="0">-</option>
                             <?foreach($arResult['WHEELS']['BRAND'] as $key => $value){
                                 if(isset($_REQUEST['brand'])&&$_REQUEST['brand']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';

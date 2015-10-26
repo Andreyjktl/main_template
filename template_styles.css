@@ -210,18 +210,19 @@ input.text1:disabled {
 
 /* Form Elements: .text2 */
 input.text2 {
-	background: #fff;
-	border-top: 1px solid #c4c4c4;
-	border-left: 1px solid #cbcbcb;
-	border-right: 1px solid #cbcbcb;
-	border-bottom: 1px solid #e3e3e3;
-	padding: 4px 5px;
-	margin: 0;
-	outline: none;
-	font: normal 1em/1.25em Arial, sans-serif;
-	color: #000;
-	border-radius: 3px;
-	box-shadow: inset 1px 1px 4px rgba(68,67,50,0.23);
+	background: #FFFFFF;
+    /* border-top: 1px solid #c4c4c4; */
+    /* border-left: 1px solid #cbcbcb; */
+    /* border-right: 1px solid #cbcbcb; */
+    /* border-bottom: 1px solid #e3e3e3; */
+    padding: 4px 5px;
+    margin: 0;
+    outline: none;
+    font: normal 1em/1.25em Arial, sans-serif;
+    color: #000;
+    border-radius: 3px;
+    /* box-shadow: inset 1px 1px 4px rgba(68,67,50,0.23); */
+    border: 2px solid #EFEFEF;
 }
 input.text2:disabled {
 	color: #333;
@@ -388,7 +389,7 @@ button.button4 span, span.button4-span input {
 	display: block;
 	cursor: pointer;
 	padding: 1px 8px 2px 8px;
-	border: 1px solid #0087b8;
+	border: 1px solid #0085C8;
 	background: none;
 	background: url(./images/button4.gif) repeat-x 0 0;
 	position: relative;
@@ -510,17 +511,15 @@ label input {
 
 /* Center */
 div.center {
-	width: 937px;
-	margin: 10px auto 0;
-	margin-bottom: 50px;
-	position: relative;
-	
-	font-size: 1.2em;
-	line-height: 1.5em;
-	
-	
-	-moz-box-shadow: 0 25px 50px rgba(119,113,42,0.27);.
-           box-shadow: 0 25px 50px rgba(119,113,42,0.27);
+	min-width: 937px;
+    width: 85%;
+    /* width: 937px; */
+    margin: 10px auto 0;
+    margin-bottom: 50px;
+    position: relative;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    -moz-box-shadow: 0 25px 50px rgba(119,113,42,0.27);
 	
 }
 
@@ -536,19 +535,19 @@ header {
 
 }
 div.top-block {
-	position: relative;
-	z-index: 300;
-	padding-left: 219px;
-	min-height: 90px;
-	
-	border-bottom: 0px solid #d1dadf;
-	background: #FFF;
+    position: relative;
+    z-index: 300;
+    /* padding-left: 219px; */
+    min-height: 90px;
+    border-bottom: 0px solid #d1dadf;
+    background: #FFF;
 	}
 
 
 /* Logo */
 div.logo {
-    width: 200px;
+    min-width: 200px;
+    width: 25%;
     min-height: 90px;
     text-align: center;
     /* position: absolute; */
@@ -584,7 +583,8 @@ div.sections {
 }
 div.section {
     float: left;
-    width: 180px;
+    min-width: 180px;
+    width: 25%;
     min-height: 55px;
     padding: 0 5px 0 21px;
     background: url(/bitrix/templates/mega_template/./images/section.gif) no-repeat 0 100%;
@@ -641,6 +641,12 @@ div.panel {
     z-index: 300;
     border-top: 2px solid grey;
     border-bottom: 2px solid grey;
+}
+
+div.panel_inner{
+	min-width: 937px;
+    width: 85%;
+    margin: auto;
 }
 
 
@@ -1317,7 +1323,7 @@ div.filter div.params {
 	float: left;
     width: 98%;
     min-height: 121px;
-    padding: 0px 0 10px 14px;
+    padding: 0px 0 10px 5px;
     border-right: 0px solid #0070a9;
     margin-right: -10px;
     background-color: #cfd4da;
@@ -1470,7 +1476,7 @@ div.inverse {
 	margin-bottom: -1px;
 }
 div.inverse ul.tabs li {
-	border: 1px solid #373737;
+	border: 1px solid #ffffff;
 	border-top: none;
 }
 div.inverse ul.tabs li.selected {
@@ -1503,6 +1509,7 @@ div.inverse ul.tabs li.selected:last-child, div.inverse ul.tabs li.selected-last
 /* Tabs: Size1 */
 ul.size1 li {
 	min-width: 155px;
+	width: 16.6%;
 }
 ul.size1 li span {
 	display: block;
@@ -1814,7 +1821,7 @@ div.brands ul li {
 	float: left;
 	width: 140px;
 	height: 180px;
-	padding: 0 39px 0 0;
+	padding: 0 30px 0 0;
 	overflow: hidden;
 }
 div.brands div.img {
@@ -1861,7 +1868,8 @@ div.brands h4 {
 /* Catalog_left */
 div.catalog_left div.overflow_left {
 	overflow: hidden;
-	width: 660px;
+	min-width: 660px;
+	width: 100%;
 	float: left;
 }
 
@@ -1906,7 +1914,7 @@ table.catalog tr.img td {
 	padding-top: 10px;
 }
 table.catalog tr.img td img {
-	max-width: 135px;
+	max-width: 150px;
 }
 table.catalog tr.txt td {
 	padding: 3px 25px 25px 0;
@@ -1922,7 +1930,7 @@ table.catalog tr.img td div {
 	padding-left: 1px;
 }
 table.catalog h4 {
-	padding: 0 0 7px 0;
+	padding: 10px 5px 7px 10px;
 	margin: 0;
 }
 table.catalog p.price {
@@ -1947,8 +1955,17 @@ div.tocart span.pcs {
 	text-align: center;
 	float: left;
 }
-div.tocart button {
+div.tocart span.zakaz {
+	display: block;
+	width: 60px;
+	padding-top: 4px;
+	text-align: center;
 	float: left;
+	    padding-left: 25px;
+}
+div.tocart button {
+    /* margin-top: 0px; */
+    margin-bottom: 10px;
 }
 div.tocart button span {
 	min-width: 58px;
@@ -2011,7 +2028,7 @@ ul.icons {
 	margin: 0;
 	position: relative;
 	left: 0;
-	top: -105px;
+	top: -5px;
 	z-index: 10;
 }
 ul.icons li {
@@ -2299,6 +2316,7 @@ table.order tr td {
 }
 table.order tr td.txt {
 	width: auto;
+	padding-left: 10px;
 }
 table.order tr td.old-price {
 	width: 178px;
@@ -2553,7 +2571,7 @@ p.link {
 
 /* List Table */
 div.list-table {
-	width: 617px;
+	width: 530px;
 	float: left;
 	margin-bottom: -25px;
 }
@@ -3357,34 +3375,34 @@ section {
 	background-color: #F6F6F6;
 }
 
-.mega_result_table table tbody tr:nth-child(odd){
+.mega_result_table table tbody tr:hover{
 	background-color: #F6F6F6;
+	box-shadow: 0 0 3px;
 }
 
-.mega_result_table table tbody tr:nth-child(even){
-	background-color: #fff;
-}
 
 .buy{
 	text-align: center;
 	width: 170px;
+	background-color: #EFEFEF;
 }
 
 .mega_result_image{
 		background-color: #fff;
-		width: 120px;
+		width: 150px;
 }
 
 .param_table{
-    font-weight: normal;
+   font-weight: normal;
     font-size: 12px;
     margin: 10px;
-    width: 220px;
-    vertical-align: middle;
+    width: 200px;
+    /* vertical-align: middle; */
+    color: #444444;
 }
 
 .param_table tr td.key{
-	 width: 70%;
+	    font-weight: normal;
 }
 .param_table tr td.val{
 	
@@ -3447,4 +3465,27 @@ section {
 
 .top_block_4{
 font-weight:600;
+}
+
+.col_left{
+	width:250px;
+	float: left;
+	margin: 0;
+}
+
+.col_right{
+	margin-left: 260px;
+	padding-left: 10px;
+}
+
+div.bottom-block-1{
+	    background: url(http://xn--80aff1a.xn--80asehdb/images/footer_bg.png) 0 0 transparent repeat-x;
+    padding: 10px 0 40px;
+    background-color: white;
+}
+
+div.bottom-block-1_1{
+	min-width: 937px;
+    width: 85%;
+    margin: 10px auto 0;
 }

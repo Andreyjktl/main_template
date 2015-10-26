@@ -66,6 +66,6 @@ if($num==0){
 
 ?>
         <a href="<?=$arParams["PATH_TO_BASKET"]?>"><strong><?echo $num;?> <?=GetMessage("DVS_ITEM");?><?echo $arResult['END'];?> <br/>
-        <?=GetMessage("DVS_SUMM");?> <?echo $sum;?> <span class="rubl"><?=GetMessage("DVS_RUB");?></span></strong></a>
+        <?=GetMessage("DVS_SUMM");?> <?echo round($sum);?> <span class="rubl"><?=GetMessage("DVS_RUB");?></span></strong></a>
 <?}?>
     </div>

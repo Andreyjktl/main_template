@@ -130,12 +130,12 @@
 				</div>
 
 					<div class="panel">
-						<div style="width:937px; margin:auto;">
+						<div class="panel_inner">
 						<div class="menu">
 							<ul>
 								
 								<li<?echo CSite::InDir(SITE_DIR.'tyres/')?' class="selected"':'';?>>
-									<a href="<?=SITE_DIR?>tyres/podbor-shin.php"><span><?=GetMessage("TYRES");?></span></a>
+									<a href="<?=SITE_DIR?>search.php?width=0&height=0&diameter=0&season=0&do_search=tyres"><span><?=GetMessage("TYRES");?></span></a>
 									<?$APPLICATION->IncludeComponent(
 									"bitrix:menu", 
 									"top_brands_tyre", 
@@ -157,7 +157,7 @@
 								);?>
 																</li>
 																<li<?echo CSite::InDir(SITE_DIR.'wheels/')?' class="selected"':'';?>>
-																	<a href="<?=SITE_DIR?>wheels/podbor-diskov.php"><span><?=GetMessage("WHEELS");?></span></a>
+																	<a href="<?=SITE_DIR?>search.php?brand=0&diameter=0&width=0&aperture=0&center=0&gab=0&do_search=wheels"><span><?=GetMessage("WHEELS");?></span></a>
 																	<?$APPLICATION->IncludeComponent(
 									"bitrix:menu", 
 									"top_brands_wheel", 

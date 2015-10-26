@@ -30,9 +30,15 @@ button.button4, span.button4-span {
 	border-bottom-color: #0070a2;
 }
 button.button4 span, span.button4-span input {
+	    border-color: #0085C8;
+    border-bottom-color: #0085C8;
+    background: #0085C8;
+
+	/* 
 	border-color: #1ea7e4;
 	border-bottom-color: #008fce;
 	background: #007ab0 url(./images/button4.gif) repeat-x 0 0;
+	*/
 }
 
 

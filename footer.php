@@ -9,12 +9,12 @@
             
 
                 <!-- Bottom Block -->
+                <div class="clear:both;"></div>
 
-				<div  class="bottom-block-1" style="background: url(http://мега.онлайн/images/footer_bg.png) 0 0 transparent repeat-x;
-    padding: 10px 0 40px; background-color: white;">
-				  <div style="width: 937px; margin: 10px auto 0;">
+				<div  class="bottom-block-1">
+				  <div  class="bottom-block-1_1">
 
-						<div style="float:left; padding:10px;">
+						<div style=" float:left; padding:10px;">
 							<h2> Мега.онлайн</h2>
 							<h4>Как с нами связаться:</h4>
 							 <h4>8 (351) 751 09 19</h4>
@@ -24,6 +24,8 @@
 							<hr>
 							<h4> <a href="http://xn--80aff1a.xn--80asehdb/e-store/">О магазине</a></h4>
 							<h4> <a href="http://xn--80aff1a.xn--80asehdb/contacts/">Контакты</a></h4>
+						</div>
+							<div style=" float:left; padding:10px;"><img style="float: left; width: 150px; margin-left: 50px; margin-top: 150px;" src="/images/qr-code.gif">
 						</div>
 
 						<div id="fb-root">
