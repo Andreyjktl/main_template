@@ -2600,7 +2600,7 @@ table.list tr th {
 	background: #d1dadf;
 }
 table.list tr td {
-	font-size: 1.165em;
+	font-size: 1.0em;
 	line-height: 1.295em;
 	padding: 9px 5px 8px 5px;
 	vertical-align: top;
@@ -2611,7 +2611,7 @@ table.list tr td.title {
 	font-weight: bold;
 }
 table.list tr td.presence {
-	width: 88px;
+	width: 68px;
 }
 table.list tr td.price {
 	width: 61px;
@@ -2619,13 +2619,13 @@ table.list tr td.price {
 	white-space: nowrap;
 }
 table.list tr td.number {
-	width: 148px;
+	width: 145px;
 	white-space: nowrap;
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
 table.list tr td.fn {
-	width: 16px;
+	width: 8px;
 	padding-top: 11px;
 	color: #ccc;
 	font-size: 1em;

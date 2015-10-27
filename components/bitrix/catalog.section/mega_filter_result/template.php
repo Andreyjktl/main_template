@@ -191,7 +191,7 @@
                             <span class="zakaz">Заказать </span>
                             <input type="text" onkeyup="validateRange(this,1,'.$arElement['CATALOG_QUANTITY'].');" id="count'.$arElement['ID'].'" name="'.$arParams["PRODUCT_QUANTITY_VARIABLE"].'" value="'.($arElement['CATALOG_QUANTITY']<4?$arElement['CATALOG_QUANTITY']:4).'" size="5" class="text2">
                             <span class="pcs">'.dvsUNIT.'</span>
-                            
+                            <br> <br>
                             <button style=" width:100px;" id="buybutton'.$arElement['ID'].'" data-in-basket="'.GetMessage("DVS_IN_BASKET").'" type="submit" class="button2 buy"><span>'.$buttonText.'</span></button>
                             <div class="clear"></div>
                     </div>
