@@ -58,9 +58,9 @@
                 foreach($arElement["PRICES"] as $code=>$arPrice){
                      if($arPrice["CAN_ACCESS"]){
                          if($arPrice["DISCOUNT_VALUE"] < $arPrice["VALUE"]){
-                             $price = '<p><span class="strike">'.$arPrice["VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></span> ('.($arPrice["DISCOUNT_VALUE"] - $arPrice["VALUE"]).' <span class="rubl">'.GetMessage("DVS_RUB").'</span>)</p>
-                                       <p class="price">'.$arPrice["DISCOUNT_VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></p>';
-                           $sale = true;
+                             $price = '<p>Без скидки  <span class="strike">'.$arPrice["VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></span></p>
+                                      <p>Со скидкой</p><p class="price">'.round($arPrice["DISCOUNT_VALUE"]).' <span class="rubl">'.GetMessage("DVS_RUB").'</span></p>';
+                             $sale = true;
                          } else {
                              $price = '<p class="price">'.$arPrice["VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></p>';
                          }
@@ -94,7 +94,7 @@
                 }
 
                 //шильды
-                $icons = '';
+               /* $icons = '';
                 if ($sale || $hit) {
                     $icons = '<ul class="icons">'.
                         ($sale ? '<li><span class="red">'.dvsSALE.'</span></li>' : '')//***
@@ -102,7 +102,9 @@
                         ($hit ? '<li><span class="green">'.dvsHIT.'</span></li>' : '')//***
                     .'</ul>';
                 }
+                */
 
+                
                 if (is_array($arElement['PREVIEW_PICTURE'])) {
                     $picture = $arElement['PREVIEW_PICTURE']['SRC'];
                     $width = $arElement['PREVIEW_PICTURE']['WIDTH'];

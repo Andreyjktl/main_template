@@ -97,7 +97,7 @@
                     }
                 }
 
-                //ГёГЁГ«ГјГ¤Г»
+                //шильды
                /* $icons = '';
                 if ($sale || $hit) {
                     $icons = '<ul class="icons">'.
@@ -136,6 +136,7 @@
                         
                         </div>
                         <div style="clear:both">
+
                         '.(($arElement['IBLOCK_ID']=='7')?
                     ('
                         <p style="font-size: 11px; color:grey;">
@@ -157,19 +158,33 @@
                 <tr><td class="key"> Ширина............ '.$arElement['PROPERTIES']['tyre_width']['VALUE'].' мм</td></tr>
                 <tr><td class="key"> Высота............. '.$arElement['PROPERTIES']['tyre_height']['VALUE'].' %</td></tr>
                 <tr><td class="key"> Диаметр............ '.$arElement['PROPERTIES']['tyre_diameter']['VALUE'].'</td></tr>
-                <tr><td class="key"> Сезон............... '.$arElement['PROPERTIES']['model_season']['VALUE'].'</td></tr>
-                <tr><td class="key"> Шипованный... '.$arElement['PROPERTIES']['model_pin']['VALUE'].'</td></tr>
+                <tr><td class="key">Сезон...............
+                                 '.(($arElement['PROPERTIES']['model_season']['VALUE'] == 'Зима')?
+                                    (' <span class="winter"></span>'):'').'
+                                 '.(($arElement['PROPERTIES']['model_season']['VALUE'] == 'Лето')?
+                                    (' <span class="summer"></span>'):'').'
+                                      '.$arElement['PROPERTIES']['model_season']['VALUE'].'
+                </td></tr>
+
+                <tr><td class="key">
+                '.(($arElement['PROPERTIES']['model_season']['VALUE'] == 'Зима')?
+                     (' Шипованный...'.$arElement['PROPERTIES']['model_pin']['VALUE'].''):'').'
+                '.(($arElement['PROPERTIES']['model_pin']['VALUE']=='Шип.')?
+                     ('<span class="spike"></span>'):'').'
+                </td></tr>
                 </table> 
                    '):'').'
 
                 '.(($arElement['IBLOCK_ID']=='7')?
                     ('
                        <table class="param_table">
-			    <tr><td class="key"><li> Ширина........ '.$arElement['PROPERTIES']['wheels_width']['VALUE'].'</td></tr>
-                <tr><td class="key"><li> Диаметр....... '.$arElement['PROPERTIES']['wheels_diameter']['VALUE'].'</td></tr>
-                <tr><td class="key"><li> PCD..............'.$arElement['PROPERTIES']['wheels_aperture']['VALUE'].' мм</td></tr>
-                <tr><td class="key"><li> Вылет (ET)...'.$arElement['PROPERTIES']['wheels_gab']['VALUE'].' мм</td></tr>
-                <tr><td class="key"><li> (DIA)..............'.$arElement['PROPERTIES']['wheels_center']['VALUE'].' мм</td></tr>
+			    <tr><td class="key">Ширина........ '.$arElement['PROPERTIES']['wheels_width']['VALUE'].'</td></tr>
+                <tr><td class="key">Диаметр....... '.$arElement['PROPERTIES']['wheels_diameter']['VALUE'].'</td></tr>
+                <tr><td class="key">PCD..............'.$arElement['PROPERTIES']['wheels_aperture']['VALUE'].' мм</td></tr>
+                <tr><td class="key">Вылет (ET)...'.$arElement['PROPERTIES']['wheels_gab']['VALUE'].' мм</td></tr>
+                <tr><td class="key">(DIA)..............'.$arElement['PROPERTIES']['wheels_center']['VALUE'].' мм</td></tr>
+                <tr><td class="key">Цвет..............'.$arElement['PROPERTIES']['TSVET']['VALUE'].' </td></tr>
+                
                 </table> 
                    '):'').'
                 <p class="'.$class.'"></p>'

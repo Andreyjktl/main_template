@@ -21,7 +21,7 @@ $this->setFrameMode(true);
 <table class="data-table" cellspacing="0" cellpadding="0" border="0" width="100%">
 
 <?/*Шапка*/?>
-	<thead style="border:2px ;background-color: #d1dadf;">
+	<thead>
 	<tr>
 		<td><?=GetMessage("CATALOG_TITLE")?></td>
 		<?/*if(count($arResult["ITEMS"]) > 0):
@@ -31,17 +31,17 @@ $this->setFrameMode(true);
 		endif;*/?>
 		<?/*Цена*/?>
 		<?foreach($arResult["PRICES"] as $code=>$arPrice):?>
-			<td><p>Цена</p></td>
+			<td>Цена</td>
 		<?endforeach?>
 		
 		<?/*Количество*/?>
 		
-			<td>Кол-во</td>
+			<td>Доступно</td>
 		
 
 		<?/*Заказ*/?>
 		<?if(count($arResult["PRICES"]) > 0):?>
-			<td>&nbsp;</td>
+			<td>Купить</td>
 		<?endif?>
 	</tr>
 	</thead>
@@ -91,9 +91,9 @@ $this->setFrameMode(true);
 		<td>
 			<?if($arPrice = $arElement["PRICES"][$code]):?>
 				<?if($arPrice["DISCOUNT_VALUE"] < $arPrice["VALUE"]):?>
-					<s><?=$arPrice["PRINT_VALUE"]?></s><br /><span class="catalog-price"><?=$arPrice["PRINT_DISCOUNT_VALUE"]?></span>
+					<s><?=$arPrice["PRINT_VALUE"]?></s><br /><span class="catalog-price"><?= $arPrice["PRINT_DISCOUNT_VALUE"] ?></span>
 				<?else:?>
-					<span class="catalog-price"><?=$arPrice["PRINT_VALUE"]?></span>
+					<span class="catalog-price"><?= $arPrice["PRINT_VALUE"] ?></span>
 				<?endif?>
 			<?else:?>
 				&nbsp;
