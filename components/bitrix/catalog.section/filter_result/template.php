@@ -144,6 +144,7 @@
                     <input type="hidden" name="'.$arParams["ACTION_VARIABLE"].'BUY" value="Y">
                     <div class="tocart buy-i" itemID="'.$arElement['ID'].'" offerStatus="'.($arElement['CATALOG_QUANTITY']==0?'not-available':'available').'">
                             <input type="hidden" id="price'.$arElement['ID'].'" value="'.$iDiscount.'" />
+                            <span class="zakaz">Заказать </span>
                             <input type="text" onkeyup="validateRange(this,1,'.$arElement['CATALOG_QUANTITY'].');" id="count'.$arElement['ID'].'" name="'.$arParams["PRODUCT_QUANTITY_VARIABLE"].'" value="'.($arElement['CATALOG_QUANTITY']<4?$arElement['CATALOG_QUANTITY']:4).'" size="5" class="text2">
                             <span class="pcs">'.dvsUNIT.'</span>
                             <button id="buybutton'.$arElement['ID'].'" data-in-basket="'.GetMessage("DVS_IN_BASKET").'" type="submit" class="button2 buy"><span>'.$buttonText.'</span></button>

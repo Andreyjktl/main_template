@@ -136,47 +136,48 @@
 								
 								<li<?echo CSite::InDir(SITE_DIR.'tyres/')?' class="selected"':'';?>>
 									<a href="<?=SITE_DIR?>search.php?width=0&height=0&diameter=0&season=0&do_search=tyres"><span><?=GetMessage("TYRES");?></span></a>
-									<?$APPLICATION->IncludeComponent(
-									"bitrix:menu", 
-									"top_brands_tyre", 
-									array(
-										"ROOT_MENU_TYPE" => "top_tyres",
-										"MENU_CACHE_TYPE" => "Y",
-										"MENU_CACHE_TIME" => "36000000",
-										"MENU_CACHE_USE_GROUPS" => "Y",
-										"MENU_CACHE_GET_VARS" => array(
-										),
-										"MAX_LEVEL" => "1",
-										"USE_EXT" => "Y",
-										"ALLOW_MULTI_SELECT" => "N",
-										"COMPONENT_TEMPLATE" => "top_brands_tyre",
-										"CHILD_MENU_TYPE" => "left",
-										"DELAY" => "N"
-									),
-									false
-								);?>
-																</li>
-																<li<?echo CSite::InDir(SITE_DIR.'wheels/')?' class="selected"':'';?>>
-																	<a href="<?=SITE_DIR?>search.php?brand=0&diameter=0&width=0&aperture=0&center=0&gab=0&do_search=wheels"><span><?=GetMessage("WHEELS");?></span></a>
-																	<?$APPLICATION->IncludeComponent(
-									"bitrix:menu", 
-									"top_brands_wheel", 
-									array(
-										"ROOT_MENU_TYPE" => "top_wheels",
-										"MENU_CACHE_TYPE" => "Y",
-										"MENU_CACHE_TIME" => "36000000",
-										"MENU_CACHE_USE_GROUPS" => "Y",
-										"MENU_CACHE_GET_VARS" => array(
-										),
-										"MAX_LEVEL" => "1",
-										"USE_EXT" => "Y",
-										"ALLOW_MULTI_SELECT" => "N",
-										"COMPONENT_TEMPLATE" => "top_brands_wheel",
-										"CHILD_MENU_TYPE" => "left",
-										"DELAY" => "N"
-									),
-									false
-								);?>
+												<?$APPLICATION->IncludeComponent(
+												"bitrix:menu", 
+												"top_brands_tyre", 
+												array(
+													"ROOT_MENU_TYPE" => "top_tyres",
+													"MENU_CACHE_TYPE" => "Y",
+													"MENU_CACHE_TIME" => "36000000",
+													"MENU_CACHE_USE_GROUPS" => "Y",
+													"MENU_CACHE_GET_VARS" => array(
+													),
+													"MAX_LEVEL" => "1",
+													"USE_EXT" => "Y",
+													"ALLOW_MULTI_SELECT" => "N",
+													"COMPONENT_TEMPLATE" => "top_brands_tyre",
+													"CHILD_MENU_TYPE" => "left",
+													"DELAY" => "N"
+												),
+												false
+											);?>
+								</li>
+								<li<?echo CSite::InDir(SITE_DIR.'wheels/')?' class="selected"':'';?>>
+									<a href="<?=SITE_DIR?>search.php?brand=0&diameter=0&width=0&aperture=0&center=0&gab=0&do_search=wheels">
+									<span><?=GetMessage("WHEELS");?></span></a>
+												<?$APPLICATION->IncludeComponent(
+												"bitrix:menu", 
+												"top_brands_wheel", 
+												array(
+													"ROOT_MENU_TYPE" => "top_wheels",
+													"MENU_CACHE_TYPE" => "Y",
+													"MENU_CACHE_TIME" => "36000000",
+													"MENU_CACHE_USE_GROUPS" => "Y",
+													"MENU_CACHE_GET_VARS" => array(
+													),
+													"MAX_LEVEL" => "1",
+													"USE_EXT" => "Y",
+													"ALLOW_MULTI_SELECT" => "N",
+													"COMPONENT_TEMPLATE" => "top_brands_wheel",
+													"CHILD_MENU_TYPE" => "left",
+													"DELAY" => "N"
+												),
+												false
+											);?>
 								</li>
 								<?/*<li><a href="<?=SITE_DIR?>special-offers/"><span><?=$MESS["ACTIONS"];?></span></a></li>
 								<li><a href="<?=SITE_DIR?>tyres/podbor-shin.php"><span>Ўины</span></a></li>

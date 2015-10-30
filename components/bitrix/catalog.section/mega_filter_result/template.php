@@ -178,13 +178,12 @@
                 '.(($arElement['IBLOCK_ID']=='7')?
                     ('
                        <table class="param_table">
-			    <tr><td class="key">Ширина........ '.$arElement['PROPERTIES']['wheels_width']['VALUE'].'</td></tr>
-                <tr><td class="key">Диаметр....... '.$arElement['PROPERTIES']['wheels_diameter']['VALUE'].'</td></tr>
+			    <tr><td class="key">Ширина........ '.$arElement['PROPERTIES']['wheels_width']['VALUE'].' J</td></tr>
+                <tr><td class="key">Диаметр....... '.$arElement['PROPERTIES']['wheels_diameter']['VALUE'].' &#8243;</td></tr>
                 <tr><td class="key">PCD..............'.$arElement['PROPERTIES']['wheels_aperture']['VALUE'].' мм</td></tr>
                 <tr><td class="key">Вылет (ET)...'.$arElement['PROPERTIES']['wheels_gab']['VALUE'].' мм</td></tr>
                 <tr><td class="key">(DIA)..............'.$arElement['PROPERTIES']['wheels_center']['VALUE'].' мм</td></tr>
-                <tr><td class="key">Цвет..............'.$arElement['PROPERTIES']['TSVET']['VALUE'].' </td></tr>
-                
+                 
                 </table> 
                    '):'').'
                 <p class="'.$class.'"></p>'
