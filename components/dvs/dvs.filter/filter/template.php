@@ -23,7 +23,7 @@
                 </div>
 
                 <!-- TYRES.PARAMS -->
-                <form id="tp_form" action="<?=SITE_DIR?>search.php" method="get" class="f1">
+                <form id="tp_form" action="<?=SITE_DIR?>tyres/podbor-shin.php" method="get" class="f1">
                     <fieldset>
             <table class="filter_table">
             <tr>
@@ -92,7 +92,7 @@
                 </form>
 
                 <!-- TYRES.AUTO -->
-                <form id="ta_form" action="<?=SITE_DIR?>search.php" method="get" class="f2">
+                <form id="ta_form" action="<?=SITE_DIR?>tyres/podbor-shin.php" method="get" class="f2">
                     <fieldset>
                         <select class="size7" name="brand" id="ta_brand">
                             <option value="0"><?=GetMessage("DVS_BRAND");?></option>

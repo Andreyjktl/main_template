@@ -18,6 +18,7 @@
             <div class="fieldset">
                 <div class="selector">
                     <label><input type="hidden" name="selector1" id="f1" value=""<?echo (!isset($_REQUEST['do_search'])||isset($_REQUEST['do_search'])&&$_REQUEST['do_search']!='tyres_auto'?' checked="checked"':'')?> /> <?=GetMessage("DVS_PARAMS");?></label>
+                   
                    </div>
 
                 <!-- TYRES.PARAMS -->
@@ -64,23 +65,19 @@
                             }?>
                         </select></td></tr>
             <tr><td> Сезон</td></tr>
-            <tr><td>  <select style="width:100%"  class="size1" id="tp_season" name="season" id="season"><option value="0"></option>
-                            <?foreach($arResult['TYRES']['SEASON'] as $key => $value){
-                                if(isset($_REQUEST['season'])&&$_REQUEST['season']==$key)
-                                    echo '<option value="'.$key.'" selected>'.$value.'</option>';
-                                else
-                                    echo '<option value="'.$key.'">'.$value.'</option>';
-                            }?>
-                        </select></td></tr>
+            
+                          
+            <tr><td> 
+
+            <input type="checkbox" name="season"  value="leto"><span class="summer">Лето</span>
+            <input type="checkbox" name="season"  value="zima"><span class="winter">Зима</span>
+             </td></tr>
             <tr><td>Шипованные</td></tr> 
-            <tr><td>  <select style="width:100%"  class="size1" id="tp_pin" name="pin" id="pin"><option value="0"></option>
-                            <?foreach($arResult['TYRES']['PIN'] as $key => $value){
-                                if(isset($_REQUEST['pin'])&&$_REQUEST['pin']==$key)
-                                    echo '<option value="'.$key.'" selected>'.$value.'</option>';
-                                else
-                                    echo '<option value="'.$key.'">'.$value.'</option>';
-                            }?>
-                        </select></td></tr>
+            <tr><td>  
+                <input type="checkbox" name="pin"  value="156764"><span class="pin">Да</span>
+                <input type="checkbox" name="pin"  value="156721">Нет</span>
+
+</td></tr>
 
                         
 

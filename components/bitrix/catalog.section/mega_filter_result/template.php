@@ -12,6 +12,7 @@
 
             foreach($arLine as $arElement):?>
 			<? //echo "<pre>";  print_r($arElement); echo "</pre>"; ?>
+            <? //echo "<pre>";  print_r($arResult); echo "</pre>"; ?>
                 <?
 
                 $this->AddEditAction($arElement['ID'], $arElement['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_EDIT"));
